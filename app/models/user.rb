@@ -22,6 +22,10 @@ class User < ActiveRecord::Base
     return self.first_name + " " + self.last_name
   end
 
+#  def admin?
+#    return self.admin
+#  end
+
   private
 
   def create_remember_token

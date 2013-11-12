@@ -5,6 +5,23 @@
       <h1>
         <%= @user.full_name %>
       </h1>
+      <h5><%= @user.email %></h5>
+      <br />
+      You are currently
+      <% if !@user.newsletter? %>
+        <b>not</b>
+      <% end %>
+      receiving the weekly newsletter
+      <br />
+      <br />
+      <small>Select 'Settings' in the 'Account' menu to change any of your details</small>
+      <%#<br />
+      <br />
+      <small>Click
+      <%= link_to "here", user_url, method: :delete,
+                                    data: { confirm: "You sure?" } %>
+      <%#to permanently delete your account. This action is irreversable.
+      </small> %>
     </section>
   </aside>
 </div>
