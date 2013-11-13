@@ -10,4 +10,12 @@ FactoryGirl.define do
       admin true
     end
   end
+
+  factory :dress_size do
+    brand "Dressy"
+    size  8
+    bust  72
+    waist 80
+    hip   83
+  end
 end

@@ -1,4 +1,6 @@
 PriceFit::Application.routes.draw do
+  get "dresse_sizes/new"
+  get "dresses/new"
   get "users/new"
   resources :users
   resources :sessions, only: [:new, :create, :destroy]

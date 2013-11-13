@@ -1,0 +1,2 @@
+class DressSizesController < ApplicationController
+end

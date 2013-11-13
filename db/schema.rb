@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131106234553) do
+ActiveRecord::Schema.define(version: 20131112234207) do
+
+  create_table "dress_sizes", force: true do |t|
+    t.string   "brand"
+    t.integer  "size"
+    t.float    "bust"
+    t.float    "waist"
+    t.float    "hip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "dress_sizes", ["brand"], name: "index_dress_sizes_on_brand", unique: true
 
   create_table "users", force: true do |t|
     t.string   "first_name"
