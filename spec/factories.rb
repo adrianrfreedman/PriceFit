@@ -18,4 +18,10 @@ FactoryGirl.define do
     waist 80
     hip   83
   end
+
+  factory :brand do
+    name "Asos"
+    website "www.asos.com"
+    country "United Kingdom"
+  end
 end

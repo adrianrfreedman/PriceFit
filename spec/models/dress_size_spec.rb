@@ -73,14 +73,4 @@ describe DressSize do
     before { @dress.bust = 116.5 }
     it { should_not be_valid }
   end
-
-  describe "when brand name is already taken" do
-    before do
-      brand_with_same_name = @dress.dup
-      brand_with_same_name.brand = @dress.brand.upcase
-      brand_with_same_name.save
-    end
-
-    it { should_not be_valid }
-  end
 end

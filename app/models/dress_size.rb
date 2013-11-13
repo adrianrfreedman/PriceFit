@@ -1,11 +1,9 @@
 class DressSize < ActiveRecord::Base
   # before_saves
-  before_save { self.brand = brand.downcase }
 
   # Validations
   validates :brand, presence: true,
-                    length: { maximum: 30 },
-                    uniqueness: { case_sensitive: false }
+                    length: { maximum: 30 }
   validates :size,  presence: true,
                     inclusion: { in: (4..18).step(2).to_a }
   validates :bust,  presence: true,

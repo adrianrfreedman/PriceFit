@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131112234207) do
+ActiveRecord::Schema.define(version: 20131113045232) do
+
+  create_table "brands", force: true do |t|
+    t.string   "name"
+    t.string   "website"
+    t.string   "country"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "brands", ["name"], name: "index_brands_on_name", unique: true
 
   create_table "dress_sizes", force: true do |t|
     t.string   "brand"
@@ -23,7 +33,7 @@ ActiveRecord::Schema.define(version: 20131112234207) do
     t.datetime "updated_at"
   end
 
-  add_index "dress_sizes", ["brand"], name: "index_dress_sizes_on_brand", unique: true
+  add_index "dress_sizes", ["brand"], name: "index_dress_sizes_on_brand"
 
   create_table "users", force: true do |t|
     t.string   "first_name"
