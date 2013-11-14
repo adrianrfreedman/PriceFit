@@ -11,17 +11,17 @@ FactoryGirl.define do
     end
   end
 
-  factory :dress_size do
-    brand "Dressy"
-    size  8
-    bust  72
-    waist 80
-    hip   83
-  end
-
   factory :brand do
     name "Asos"
     website "www.asos.com"
     country "United Kingdom"
+  end
+
+  factory :brand_size do
+    size  8
+    bust  72
+    waist 80
+    hip   83
+    brand
   end
 end

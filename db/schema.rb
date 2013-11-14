@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131113045232) do
+ActiveRecord::Schema.define(version: 20131114041250) do
+
+  create_table "brand_sizes", force: true do |t|
+    t.integer  "size"
+    t.float    "bust"
+    t.float    "waist"
+    t.float    "hip"
+    t.integer  "brand_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "legend"
+  end
+
+  add_index "brand_sizes", ["brand_id", "created_at"], name: "index_brand_sizes_on_brand_id_and_created_at"
 
   create_table "brands", force: true do |t|
     t.string   "name"
@@ -22,18 +35,6 @@ ActiveRecord::Schema.define(version: 20131113045232) do
   end
 
   add_index "brands", ["name"], name: "index_brands_on_name", unique: true
-
-  create_table "dress_sizes", force: true do |t|
-    t.string   "brand"
-    t.integer  "size"
-    t.float    "bust"
-    t.float    "waist"
-    t.float    "hip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "dress_sizes", ["brand"], name: "index_dress_sizes_on_brand"
 
   create_table "users", force: true do |t|
     t.string   "first_name"
