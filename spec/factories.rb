@@ -22,6 +22,7 @@ FactoryGirl.define do
     bust  72
     waist 80
     hip   83
+    sequence(:legend) { |n| "X#{n}" }
     brand
   end
 end

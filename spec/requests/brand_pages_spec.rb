@@ -24,10 +24,17 @@ describe "Brand pages" do
   end
 
   describe "brand page" do
-
     let(:brand) { FactoryGirl.create(:brand) }
+    let!(:s1) { FactoryGirl.create(:dress_size) }
+    let!(:s2) { FactoryGirl.create(:dress_size) }
+
     before { visit brand_path(brand) }
 
     it { should have_basic_page_content(brand.name) }
+
+    describe "dress sizes" do
+      it { should have_content(s1.legend) }
+      it { should have_content(s2.legend) }
+    end
   end
 end

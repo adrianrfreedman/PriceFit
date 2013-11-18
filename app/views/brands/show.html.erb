@@ -10,5 +10,19 @@
       Country: <%= @brand.country %>
     </section>
   </aside>
+  <div class="span8">
+    <% if @brand.brand_sizes.any? %>
+      <h3>Sizes (<%= @brand.brand_sizes.count %>)</h3>
+      <table class="brand-sizes">
+        <tr>
+          <th>Size</th> <th>Bust</th> <th>Waist</th>
+          <th>Hip</th> <th>Legend</th>
+        </tr>
+        <%= render @brand_sizes %>
+      </table>
+    <% else %>
+      No sizes.. yet.
+    <% end %>
+  </div>
 </div>
 

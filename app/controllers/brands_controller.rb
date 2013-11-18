@@ -6,6 +6,6 @@ class BrandsController < ApplicationController
 
   def show
     @brand = Brand.find(params[:id])
-    @sizes = BrandSize.joins(:brand).where(brands: { name: @brand.name })
+    @brand_sizes = BrandSize.joins(:brand).where(brands: { name: @brand.name })
   end
 end
