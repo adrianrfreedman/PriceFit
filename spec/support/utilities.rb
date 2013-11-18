@@ -12,9 +12,9 @@ RSpec::Matchers.define :have_error_message do |message|
   end
 end
 
-RSpec::Matchers.define :have_sign_in_page_content do |content|
+RSpec::Matchers.define :have_basic_page_content do |content|
   match do |page|
-    expect(page).to have_content(content)
+    expect(page).to have_selector('h1', text: content)
     expect(page).to have_title(content)
   end
 end

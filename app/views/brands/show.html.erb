@@ -1,0 +1,14 @@
+<% provide(:title, @brand.name) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1><%= @brand.name %></h1>
+      Website: <%= link_to @brand.website,
+                   url_with_protocol(@brand.website),
+                   target: "_blank" %>
+      </br>
+      Country: <%= @brand.country %>
+    </section>
+  </aside>
+</div>
+

@@ -12,8 +12,8 @@ FactoryGirl.define do
   end
 
   factory :brand do
-    name "Asos"
-    website "www.asos.com"
+    sequence(:name) { |n| "Brand #{n}" }
+    sequence(:website) { |n| "www.brand-#{n}.com" }
     country "United Kingdom"
   end
 

@@ -7,7 +7,7 @@ describe "Authentication" do
   describe "signin page" do
     before { visit signin_path }
 
-    it { should have_sign_in_page_content('Sign In') }
+    it { should have_basic_page_content('Sign In') }
   end
 
   describe "signin" do

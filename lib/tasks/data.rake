@@ -15,8 +15,8 @@ namespace :data do
       if is_brand
         brand = Brand.find_by(name:attrs[0])
         if brand.nil?
-          brand = Brand.create(name: attrs[0], website: attrs[1],
-                               country: attrs[2])
+          brand = Brand.create(name: attrs[0], website: attrs[2],
+                               country: attrs[1])
           brand.save!
         end
         is_brand = false
